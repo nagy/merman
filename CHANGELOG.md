@@ -97,6 +97,7 @@ For a maintained runnable Rust example, use `cargo run --locked -p merman --feat
 - Preserve Agentflow's unmerged Dagre self-loop segments and SVG label order. Usecase SVG edge backgrounds participate in layout and label clearance, and classic markers retain their source variant. Swimlane synthetic colors follow nested declaration slots; unchanged pinned routes keep their label anchors inside the root viewport. [#196](https://github.com/Latias94/merman/pull/196)
 - Playground comparison keeps fallback fonts consistent across its rendering panes, including C4 on Windows. [#196](https://github.com/Latias94/merman/pull/196)
 - The independent Tree-sitter package retains its selected source baseline; this Mermaid move adds no syntax family, Cargo feature, FFI version, or editor-facts schema version. [#196](https://github.com/Latias94/merman/pull/196)
+- The optional `layout-elk` feature now drives the [`elk-layout`](https://crates.io/crates/elk-layout) crate family, whose crates offer `EPL-2.0 OR GPL-3.0-or-later`, instead of the EPL-2.0-only source port. **Breaking adapter change:** `SourcePhaseDiagnostics`, `ProcessorKind`, `LayeredPhase` and the per-phase work control are gone, and container nesting deeper than `MAX_HIERARCHY_DEPTH` (64) is rejected with `Error::TooDeep`.
 
 ### Lightweight embedding and Rust migration
 

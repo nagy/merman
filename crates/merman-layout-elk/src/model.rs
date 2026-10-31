@@ -318,19 +318,6 @@ impl TerminalLabelKey {
     pub const fn on_right(self) -> bool {
         matches!(self, Self::StartRight | Self::EndRight)
     }
-
-    pub(crate) const fn source_index(self) -> usize {
-        match self {
-            Self::StartLeft => 0,
-            Self::StartRight => 1,
-            Self::EndLeft => 2,
-            Self::EndRight => 3,
-        }
-    }
-
-    pub(crate) fn from_source_index(index: usize) -> Option<Self> {
-        Self::ALL.get(index).copied()
-    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]

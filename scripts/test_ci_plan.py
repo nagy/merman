@@ -1114,7 +1114,7 @@ class WorkflowFontDependenciesTests(unittest.TestCase):
         self.assertIn("github.event_name == 'schedule'", full)
         self.assertIn("github.event_name == 'workflow_dispatch'", full)
         self.assertNotIn("github.event_name == 'push'", full)
-        self.assertIn("separate_children_layout_is_small_stack_safe_and_deterministic", job)
+        self.assertIn("deep_hierarchy_layout_is_small_stack_safe", job)
         self.assertIn("--test header_smoke --test c_consumer_smoke", job)
         self.assertIn("Test explicit native fonts on every host", job)
         self.assertIn("candidate: [node-wasm, napi]", workflow_job(ci, "node-contracts"))

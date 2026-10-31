@@ -517,7 +517,7 @@ jobs:
         shell: bash
         run: |
           cargo nextest run --locked -p merman-layout-elk --lib --cargo-quiet \
-            -E 'test(separate_children_layout_is_small_stack_safe_and_deterministic) | test(source_graph_dump_is_small_stack_safe_for_deep_hierarchy)'
+            -E 'test(deep_hierarchy_layout_is_small_stack_safe) | test(deeper_hierarchy_is_rejected)'
           cargo nextest run --locked -p xtask --cargo-quiet \
             -E 'test(two_contenders_are_serialized) | test(dead_owner_is_recovered)'
           ffi_features="$(python3 scripts/artifact_profile_recipe.py c-abi-native)"

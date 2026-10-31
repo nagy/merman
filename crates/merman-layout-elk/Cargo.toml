@@ -14,5 +14,8 @@ keywords = ["mermaid", "elk", "layout", "diagrams"]
 categories = ["visualization"]
 
 [dependencies]
-merman-elk-layered.workspace = true
+# Fork: `elk-layout` is the dual-licensed ELK port. It re-exports the
+# `org-eclipse-elk-*` crates and an elkjs-compatible JSON layout API.
+elk-layout = "0.12.1"
+serde_json.workspace = true
 thiserror.workspace = true
