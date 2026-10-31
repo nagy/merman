@@ -28,6 +28,83 @@ allow = [
 name = "merman-elk-layered"
 allow = ["EPL-2.0"]
 
+# The `elk-layout` port and its `org-eclipse-elk-*` plugins declare
+# `EPL-2.0 OR GPL-3.0-or-later`. Merman takes the EPL-2.0 arm, which keeps the
+# MIT OR Apache-2.0 distribution story and the file-level copyleft boundary.
+# A GPL-family consumer can take the other arm from the same crates.
+
+[[licenses.exceptions]]
+name = "elk-layout"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-common"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-disco"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-force"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-graphviz-dot"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-graphviz-layouter"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-layered"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-libavoid"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-mrtree"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-radial"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-rectpacking"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-spore"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-topdownpacking"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-alg-vertiflex"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-conn-gmf"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-core"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-graph"
+allow = ["EPL-2.0"]
+
+[[licenses.exceptions]]
+name = "org-eclipse-elk-graph-json"
+allow = ["EPL-2.0"]
+
 [[licenses.exceptions]]
 name = "cssparser"
 allow = ["MPL-2.0"]

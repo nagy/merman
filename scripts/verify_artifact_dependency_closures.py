@@ -145,7 +145,8 @@ def _sdk_claim(kind: str, variant: str) -> ClosureClaim:
     """Keep the six SDK recipes on the existing package/feature boundary checker."""
     profile_id = f"sdk-{kind}-{variant}"
     root = "merman-ffi" if kind == "native" else "merman-wasi"
-    elk = ("merman-elk-layered", "merman-layout-elk")
+    # Fork: the ELK adapter links the `elk-layout` port instead of `merman-elk-layered`.
+    elk = ("elk-layout", "merman-layout-elk")
     math = ("ratex-layout", "ratex-parser", "ratex-svg", "ratex-types")
     required = [root, "merman-bindings-core", "merman", "merman-core", "merman-render",
                 "merman-export", "manatee", "usvg", "fontdb"]
@@ -400,7 +401,7 @@ SEMANTIC_CLAIMS = (
             "console_error_panic_hook",
             "getrandom",
             "js-sys",
-            "pest",
+            # Fork: `pest` reaches this closure through `elk-layout`'s graph-JSON parser.
             "serde-wasm-bindgen",
             "serde-saphyr",
             "serde_yaml",
@@ -853,6 +854,18 @@ def prepare_metadata_probe(case: VerificationCase, probe_dir: Path) -> Path:
     return manifest
 
 
+def _probe_lock_identities(
+    probe_manifest: Path,
+) -> dict[tuple[str, str], frozenset[str]]:
+    """Collect the source identity of every probe lock package that carries one."""
+    identities: dict[tuple[str, str], set[str]] = {}
+    for name, version, source in _lockfile_external_identities(
+        probe_manifest.parent / "Cargo.lock"
+    ):
+        identities.setdefault((name, version), set()).add(source)
+    return {identity: frozenset(sources) for identity, sources in identities.items()}
+
+
 def _validate_probe_lock(probe_manifest: Path) -> None:
     lockfile = probe_manifest.parent / "Cargo.lock"
     if not lockfile.is_file():
@@ -933,12 +946,16 @@ def parse_cargo_metadata(
     *,
     root_package: str,
     tree_output: str,
+    lock_identities: Mapping[tuple[str, str], frozenset[str]] | None = None,
 ) -> DependencyClosure:
     """Enrich Cargo's selected dependency tree with unambiguous metadata identities.
 
     Metadata resolve edges can include inactive optional dependencies referenced by
     weak feature forwarding. Cargo tree owns dependency and feature selection;
     metadata supplies full source identities without parsing human source displays.
+    `lock_identities` names the packages that the committed lock admits. A
+    production tree reaches a host-only build edge that the platform-filtered
+    answer omits, and the lock then supplies that one source identity.
     """
     if isinstance(document, str):
         try:
@@ -991,21 +1008,40 @@ def parse_cargo_metadata(
             raise ClosureVerificationError(f"invalid cargo tree package line: {line!r}")
         name, version = words[0], words[1][1:]
         matches = candidates.get((name, version), [])
-        if len(matches) != 1:
-            raise ClosureVerificationError(
-                f"cargo tree identity ambiguity for {name} {version}: "
-                f"expected one metadata source identity, found {len(matches)}"
-            )
-        package = matches[0]
-        if index == 0 and package["id"] != root_id:
-            raise ClosureVerificationError("cargo tree root differs from cargo metadata root")
-        source_value = package.get("source")
-        manifest_path = package.get("manifest_path")
-        if source_value is not None and not isinstance(source_value, str):
-            raise ClosureVerificationError(f"cargo metadata package {name!r} has invalid source")
-        if not isinstance(manifest_path, str) or not manifest_path:
-            raise ClosureVerificationError(f"cargo metadata package {name!r} lacks manifest_path")
-        source = _metadata_source(source_value, Path(manifest_path))
+        if matches:
+            if len(matches) != 1:
+                raise ClosureVerificationError(
+                    f"cargo tree identity ambiguity for {name} {version}: "
+                    f"expected one metadata source identity, found {len(matches)}"
+                )
+            package = matches[0]
+            if index == 0 and package["id"] != root_id:
+                raise ClosureVerificationError(
+                    "cargo tree root differs from cargo metadata root"
+                )
+            source_value = package.get("source")
+            manifest_path = package.get("manifest_path")
+            if source_value is not None and not isinstance(source_value, str):
+                raise ClosureVerificationError(
+                    f"cargo metadata package {name!r} has invalid source"
+                )
+            if not isinstance(manifest_path, str) or not manifest_path:
+                raise ClosureVerificationError(
+                    f"cargo metadata package {name!r} lacks manifest_path"
+                )
+            source = _metadata_source(source_value, Path(manifest_path))
+        else:
+            # A production tree keeps host build edges, so it can name a package
+            # that the platform-filtered resolve omits. The committed lock admits
+            # exactly one source identity for that name and version, or the
+            # closure is ambiguous.
+            locked_sources = sorted((lock_identities or {}).get((name, version), ()))
+            if len(locked_sources) != 1:
+                raise ClosureVerificationError(
+                    f"cargo tree identity ambiguity for {name} {version}: "
+                    f"expected one lock source identity, found {len(locked_sources)}"
+                )
+            source = locked_sources[0]
         features = feature_text.split(",") if feature_text else []
         identity_features.setdefault((name, version, source), set()).update(features)
 
@@ -1163,6 +1199,7 @@ def verify_cases(
                                 "cargo metadata stdout was neither JSON text nor an object"
                             )
                         _validate_probe_lock(probe_manifest)
+                        lock_identities = _probe_lock_identities(probe_manifest)
                         tree = runner(cargo_tree_command(case, probe_manifest=probe_manifest))
                         if tree.returncode != 0:
                             stderr = (tree.stderr or "").strip() or "<empty stderr>"
@@ -1173,6 +1210,7 @@ def verify_cases(
                             completed.stdout,
                             root_package=case.recipe.package,
                             tree_output=tree.stdout,
+                            lock_identities=lock_identities,
                         )
                         normal_build_closure = None
                         if case.normal_build_claim is not None:
@@ -1187,6 +1225,7 @@ def verify_cases(
                             normal_build_closure = parse_cargo_metadata(
                                 completed.stdout, root_package=case.recipe.package,
                                 tree_output=production_tree.stdout,
+                                lock_identities=lock_identities,
                             )
                         outcome = runtime_closure, normal_build_closure
                     except RuntimeError as error:

@@ -63,6 +63,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "64fa3c856b712db6612c019f14756e64e4bcea13337a6b33b696333a9eaa2d06"
 
 [[package]]
+name = "cc"
+version = "1.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86e055fa6e3e40ad6187ba25b6855eeb635d5271f8e0f0e1e9a5826b8d75bea0"
+dependencies = [
+ "find-msvc-tools",
+ "shlex",
+]
+
+[[package]]
 name = "cfg-if"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -200,6 +210,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "elk-layout"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cae0e5f85eabb253b802db0e819989dbea92cdfc3f26fcec73e9dd2fc6ccbf29"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-alg-disco",
+ "org-eclipse-elk-alg-force",
+ "org-eclipse-elk-alg-graphviz-dot",
+ "org-eclipse-elk-alg-graphviz-layouter",
+ "org-eclipse-elk-alg-layered",
+ "org-eclipse-elk-alg-libavoid",
+ "org-eclipse-elk-alg-mrtree",
+ "org-eclipse-elk-alg-radial",
+ "org-eclipse-elk-alg-rectpacking",
+ "org-eclipse-elk-alg-spore",
+ "org-eclipse-elk-alg-topdownpacking",
+ "org-eclipse-elk-alg-vertiflex",
+ "org-eclipse-elk-conn-gmf",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+ "org-eclipse-elk-graph-json",
+]
+
+[[package]]
 name = "equivalent"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -219,6 +254,12 @@ name = "fastrand"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223"
+
+[[package]]
+name = "find-msvc-tools"
+version = "0.1.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1c66915cc5391097de7a2b0b972e8505aa33c0df401fd3a6811dbdb32881ba48"
 
 [[package]]
 name = "foldhash"
@@ -510,6 +551,17 @@ dependencies = [
 
 [[package]]
 name = "json5"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96b0db21af676c1ce64250b5f40f3ce2cf27e4e47cb91ed91eb6fe9350b430c1"
+dependencies = [
+ "pest",
+ "pest_derive",
+ "serde",
+]
+
+[[package]]
+name = "json5"
 version = "1.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e46128c9fb848c29097da3149e627cce5496d0b2820a9be06d12ee266c09c749"
@@ -666,7 +718,7 @@ dependencies = [
  "cssparser",
  "granit-parser",
  "indexmap",
- "json5",
+ "json5 1.3.6",
  "lalrpop-util",
  "merman-markup",
  "merman-model",
@@ -688,17 +740,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "merman-elk-layered"
-version = "0.9.3"
-dependencies = [
- "thiserror",
-]
-
-[[package]]
 name = "merman-layout-elk"
 version = "0.9.3"
 dependencies = [
- "merman-elk-layered",
+ "elk-layout",
+ "serde_json",
  "thiserror",
 ]
 
@@ -877,6 +923,196 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 
 [[package]]
+name = "org-eclipse-elk-alg-common"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b19d24c9e81f12eb847298b103e379d41dbe426f839e3d742d5b4ab7dbb694b0"
+dependencies = [
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+ "rustc-hash",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-disco"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2082703357bcb5b521352b685cfbed166daa57f94349bf59d9d1573bf5539f8"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-force"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ab90f9d665703da54a6975808a6edd6f27f60c1ac6cf7980dffd44bc28af1ae"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-graphviz-dot"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1e38fdde33b700185921cea025cf53de6848b11a117140eaf8813839946a9fb"
+
+[[package]]
+name = "org-eclipse-elk-alg-graphviz-layouter"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "675fbcc7021ea9863f6ef4de92bce093e8c5fc3967bc56c9566bb66da5358dd1"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-alg-graphviz-dot",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-layered"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f258a779f770653655a9c173a82d8db54a0c30b8c98766781d4ad106bdd452cd"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+ "rustc-hash",
+ "serde_json",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-libavoid"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18da60a324d4097d3daa73881fa6fbc4d9def84101dbd98f080aa8b342db46cd"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-mrtree"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "73a01f0981345d8b31b05bb13bb92b7dd934cf44273547ab3fd67dcc9072df2f"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-radial"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2bf391c5a6073a8fc0c0ab5c55e79ef90781fdd6cfcb3a08aff6840ef3fd7638"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-rectpacking"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d00572bdac7de368d28edd8afacfd95b8270c550778eb5b2fa7e0896406cbe90"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-spore"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f8ebb9dbdde9085a075e2bef7052af33abd00d0a11eae473e900f47e0f3de1fc"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-topdownpacking"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e6638e9e1db5f330c68bde56fb8cd007752630a5b64cd3d272ecc5194d8abc87"
+dependencies = [
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-alg-vertiflex"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c03b59517244a5bd0a36900853cd616ce7d93d557a3426c6cfbfc4f268283754"
+dependencies = [
+ "org-eclipse-elk-alg-common",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-conn-gmf"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b629f921889dbf2c5cd9df1c3258ce10698fffecabfeb523b807456ef3689500"
+dependencies = [
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-core"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8002ab4315d01bc1fd228e5c79ed022af94299ebb3df6b2d9e965cb0e348ed43"
+dependencies = [
+ "org-eclipse-elk-graph",
+]
+
+[[package]]
+name = "org-eclipse-elk-graph"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67bd179462ab23433f7a47cb30db163ec0e2c8e515377b8b6f761d7883907aba"
+dependencies = [
+ "parking_lot",
+ "rustc-hash",
+]
+
+[[package]]
+name = "org-eclipse-elk-graph-json"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1822b051354824489c531d91b61541616bb7fd72c2e16767c5b51d34c57f0e53"
+dependencies = [
+ "json5 0.4.1",
+ "org-eclipse-elk-alg-disco",
+ "org-eclipse-elk-alg-force",
+ "org-eclipse-elk-alg-layered",
+ "org-eclipse-elk-alg-mrtree",
+ "org-eclipse-elk-alg-radial",
+ "org-eclipse-elk-alg-rectpacking",
+ "org-eclipse-elk-alg-spore",
+ "org-eclipse-elk-alg-vertiflex",
+ "org-eclipse-elk-core",
+ "org-eclipse-elk-graph",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "palette"
 version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -939,6 +1175,59 @@ name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
+
+[[package]]
+name = "pest"
+version = "2.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8db75153506001cb36ed924f08cadc862eb3f8c4d0d534139f29074769d7660"
+dependencies = [
+ "memchr",
+ "pest_stack_guard",
+ "ucd-trie",
+]
+
+[[package]]
+name = "pest_derive"
+version = "2.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "20aa17e11fb35664b67d5214a0afac57a360d231b6ec53d6eba0700b27d933b4"
+dependencies = [
+ "pest",
+ "pest_generator",
+]
+
+[[package]]
+name = "pest_generator"
+version = "2.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "626ec5afccf44ccbfeb2b232316510bb55b4bf34d891afcb0fb07d2b17d7fe9d"
+dependencies = [
+ "pest",
+ "pest_meta",
+ "proc-macro2",
+ "quote",
+ "syn 3.0.9",
+]
+
+[[package]]
+name = "pest_meta"
+version = "2.9.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3f45b6caa65c1b08186832745159c2529994146340a7bf44168095469720f5d"
+dependencies = [
+ "pest",
+]
+
+[[package]]
+name = "pest_stack_guard"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "97e6cd2217057fa86b6eaa512917e58089d875b957a31e35e7ab729977e0a5f2"
+dependencies = [
+ "psm",
+ "stacker",
+]
 
 [[package]]
 name = "phf"
@@ -1068,6 +1357,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "psm"
+version = "0.1.24"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "200b9ff220857e53e184257720a14553b2f4aa02577d2ed9842d45d4b9654810"
+dependencies = [
+ "cc",
 ]
 
 [[package]]
@@ -1217,6 +1515,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "shlex"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
+
+[[package]]
 name = "siphasher"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1239,6 +1543,19 @@ name = "stable_deref_trait"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
+
+[[package]]
+name = "stacker"
+version = "0.1.25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "707f49d46706bacf8a2b00d51dace3f9de527c13eec3778f570c411f89e69967"
+dependencies = [
+ "cc",
+ "cfg-if",
+ "libc",
+ "psm",
+ "windows-sys",
+]
 
 [[package]]
 name = "string_cache"
@@ -1478,6 +1795,15 @@ name = "windows-link"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+
+[[package]]
+name = "windows-sys"
+version = "0.61.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc"
+dependencies = [
+ "windows-link",
+]
 
 [[package]]
 name = "writeable"

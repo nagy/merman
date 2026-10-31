@@ -93,7 +93,7 @@
     "version": "0.9.2",
     "command_profile": "artifact-profile-target",
     "offline": true,
-    "cargo_lock_sha256": "c19255d0822a0373fe1ccf76cb25c8e476c6ff5b483864c2c52482c94f576e68",
+    "cargo_lock_sha256": "da947907293499733b53a73e88cbcf15a8ff4064475476a33c4588bf0afe512c",
     "configuration_sha256": "50ee414d81334fe54e34465a8441d8ee5ec237518b06b3759c794056aa3e26a4",
     "artifact_bundle_sha256": "6c08dbc3a894870e19a2d73944bbf545d5e4c4b94078ef50dbab9bf3ca7b745d"
   },
@@ -101,13 +101,13 @@
     {
       "artifact_profile_id": "python-uniffi-native",
       "target": "x86_64-pc-windows-msvc",
-      "package_count": 137,
-      "packages_sha256": "4059a71efd752d194e524f289b76d03b85ef8c161dd436775286d26896af08e7"
+      "package_count": 162,
+      "packages_sha256": "e3333446ffd05de95eba1894e3c04b45a51f9c35d239eec86f7f604c2b90a634"
     }
   ],
   "dependency_closure": {
-    "package_count": 137,
-    "packages_sha256": "4059a71efd752d194e524f289b76d03b85ef8c161dd436775286d26896af08e7"
+    "package_count": 162,
+    "packages_sha256": "e3333446ffd05de95eba1894e3c04b45a51f9c35d239eec86f7f604c2b90a634"
   },
   "licenses": [
     {
@@ -168,6 +168,14 @@
             "David Tolnay <dtolnay@gmail.com>"
           ],
           "repository": "https://github.com/dtolnay/itoa"
+        },
+        {
+          "name": "libc",
+          "version": "0.2.191",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [],
+          "repository": "https://github.com/rust-lang/libc"
         },
         {
           "name": "pastey",
@@ -402,6 +410,42 @@
             "Andrew Hickman <andrew.hickman1@sky.com>"
           ],
           "repository": "https://github.com/andrewhickman/fs-err"
+        }
+      ]
+    },
+    {
+      "id": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "text_sha256": "965a63a81d9a2fbeb5f9096954dabb49690f9dffcdac9825f675b25c807252a2",
+      "text": "                             Apache License\n                       Version 2.0, January 2004\n                    http://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n  \"License\" shall mean the terms and conditions for use, reproduction,\n  and distribution as defined by Sections 1 through 9 of this document.\n\n  \"Licensor\" shall mean the copyright owner or entity authorized by\n  the copyright owner that is granting the License.\n\n  \"Legal Entity\" shall mean the union of the acting entity and all\n  other entities that control, are controlled by, or are under common\n  control with that entity. For the purposes of this definition,\n  \"control\" means (i) the power, direct or indirect, to cause the\n  direction or management of such entity, whether by contract or\n  otherwise, or (ii) ownership of fifty percent (50%) or more of the\n  outstanding shares, or (iii) beneficial ownership of such entity.\n\n  \"You\" (or \"Your\") shall mean an individual or Legal Entity\n  exercising permissions granted by this License.\n\n  \"Source\" form shall mean the preferred form for making modifications,\n  including but not limited to software source code, documentation\n  source, and configuration files.\n\n  \"Object\" form shall mean any form resulting from mechanical\n  transformation or translation of a Source form, including but\n  not limited to compiled object code, generated documentation,\n  and conversions to other media types.\n\n  \"Work\" shall mean the work of authorship, whether in Source or\n  Object form, made available under the License, as indicated by a\n  copyright notice that is included in or attached to the work\n  (an example is provided in the Appendix below).\n\n  \"Derivative Works\" shall mean any work, whether in Source or Object\n  form, that is based on (or derived from) the Work and for which the\n  editorial revisions, annotations, elaborations, or other modifications\n  represent, as a whole, an original work of authorship. For the purposes\n  of this License, Derivative Works shall not include works that remain\n  separable from, or merely link (or bind by name) to the interfaces of,\n  the Work and Derivative Works thereof.\n\n  \"Contribution\" shall mean any work of authorship, including\n  the original version of the Work and any modifications or additions\n  to that Work or Derivative Works thereof, that is intentionally\n  submitted to Licensor for inclusion in the Work by the copyright owner\n  or by an individual or Legal Entity authorized to submit on behalf of\n  the copyright owner. For the purposes of this definition, \"submitted\"\n  means any form of electronic, verbal, or written communication sent\n  to the Licensor or its representatives, including but not limited to\n  communication on electronic mailing lists, source code control systems,\n  and issue tracking systems that are managed by, or on behalf of, the\n  Licensor for the purpose of discussing and improving the Work, but\n  excluding communication that is conspicuously marked or otherwise\n  designated in writing by the copyright owner as \"Not a Contribution.\"\n\n  \"Contributor\" shall mean Licensor and any individual or Legal Entity\n  on behalf of whom a Contribution has been received by Licensor and\n  subsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\n  this License, each Contributor hereby grants to You a perpetual,\n  worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n  copyright license to reproduce, prepare Derivative Works of,\n  publicly display, publicly perform, sublicense, and distribute the\n  Work and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\n  this License, each Contributor hereby grants to You a perpetual,\n  worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n  (except as stated in this section) patent license to make, have made,\n  use, offer to sell, sell, import, and otherwise transfer the Work,\n  where such license applies only to those patent claims licensable\n  by such Contributor that are necessarily infringed by their\n  Contribution(s) alone or by combination of their Contribution(s)\n  with the Work to which such Contribution(s) was submitted. If You\n  institute patent litigation against any entity (including a\n  cross-claim or counterclaim in a lawsuit) alleging that the Work\n  or a Contribution incorporated within the Work constitutes direct\n  or contributory patent infringement, then any patent licenses\n  granted to You under this License for that Work shall terminate\n  as of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\n  Work or Derivative Works thereof in any medium, with or without\n  modifications, and in Source or Object form, provided that You\n  meet the following conditions:\n\n  (a) You must give any other recipients of the Work or\n      Derivative Works a copy of this License; and\n\n  (b) You must cause any modified files to carry prominent notices\n      stating that You changed the files; and\n\n  (c) You must retain, in the Source form of any Derivative Works\n      that You distribute, all copyright, patent, trademark, and\n      attribution notices from the Source form of the Work,\n      excluding those notices that do not pertain to any part of\n      the Derivative Works; and\n\n  (d) If the Work includes a \"NOTICE\" text file as part of its\n      distribution, then any Derivative Works that You distribute must\n      include a readable copy of the attribution notices contained\n      within such NOTICE file, excluding those notices that do not\n      pertain to any part of the Derivative Works, in at least one\n      of the following places: within a NOTICE text file distributed\n      as part of the Derivative Works; within the Source form or\n      documentation, if provided along with the Derivative Works; or,\n      within a display generated by the Derivative Works, if and\n      wherever such third-party notices normally appear. The contents\n      of the NOTICE file are for informational purposes only and\n      do not modify the License. You may add Your own attribution\n      notices within Derivative Works that You distribute, alongside\n      or as an addendum to the NOTICE text from the Work, provided\n      that such additional attribution notices cannot be construed\n      as modifying the License.\n\n  You may add Your own copyright statement to Your modifications and\n  may provide additional or different license terms and conditions\n  for use, reproduction, or distribution of Your modifications, or\n  for any such Derivative Works as a whole, provided Your use,\n  reproduction, and distribution of the Work otherwise complies with\n  the conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\n  any Contribution intentionally submitted for inclusion in the Work\n  by You to the Licensor shall be under the terms and conditions of\n  this License, without any additional terms or conditions.\n  Notwithstanding the above, nothing herein shall supersede or modify\n  the terms of any separate license agreement you may have executed\n  with Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\n  names, trademarks, service marks, or product names of the Licensor,\n  except as required for reasonable and customary use in describing the\n  origin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\n  agreed to in writing, Licensor provides the Work (and each\n  Contributor provides its Contributions) on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n  implied, including, without limitation, any warranties or conditions\n  of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n  PARTICULAR PURPOSE. You are solely responsible for determining the\n  appropriateness of using or redistributing the Work and assume any\n  risks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\n  whether in tort (including negligence), contract, or otherwise,\n  unless required by applicable law (such as deliberate and grossly\n  negligent acts) or agreed to in writing, shall any Contributor be\n  liable to You for damages, including any direct, indirect, special,\n  incidental, or consequential damages of any character arising as a\n  result of this License or out of the use or inability to use the\n  Work (including but not limited to damages for loss of goodwill,\n  work stoppage, computer failure or malfunction, or any and all\n  other commercial damages or losses), even if such Contributor\n  has been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\n  the Work or Derivative Works thereof, You may choose to offer,\n  and charge a fee for, acceptance of support, warranty, indemnity,\n  or other liability obligations and/or rights consistent with this\n  License. However, in accepting such obligations, You may act only\n  on Your own behalf and on Your sole responsibility, not on behalf\n  of any other Contributor, and only if You agree to indemnify,\n  defend, and hold each Contributor harmless for any liability\n  incurred by, or claims asserted against, such Contributor by reason\n  of your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\n  To apply the Apache License to your work, attach the following\n  boilerplate notice, with the fields enclosed by brackets \"[]\"\n  replaced with your own identifying information. (Don't include\n  the brackets!)  The text should be enclosed in the appropriate\n  comment syntax for the file format. We also recommend that a\n  file or class name and description of purpose be included on the\n  same \"printed page\" as the copyright notice for easier\n  identification within third-party archives.\n\nCopyright [yyyy] [name of copyright owner]\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+      "packages": [
+        {
+          "name": "psm",
+          "version": "0.1.24",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Simonas Kazlauskas <psm@kazlauskas.me>"
+          ],
+          "repository": "https://github.com/rust-lang/stacker/"
+        }
+      ]
+    },
+    {
+      "id": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "text_sha256": "9b40875025d726c3e2f46fdd88c062462dd0f86d4e6e1deb8da067e0ef337cd8",
+      "text": "                              Apache License\n                        Version 2.0, January 2004\n                     http://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n   \"License\" shall mean the terms and conditions for use, reproduction,\n   and distribution as defined by Sections 1 through 9 of this document.\n\n   \"Licensor\" shall mean the copyright owner or entity authorized by\n   the copyright owner that is granting the License.\n\n   \"Legal Entity\" shall mean the union of the acting entity and all\n   other entities that control, are controlled by, or are under common\n   control with that entity. For the purposes of this definition,\n   \"control\" means (i) the power, direct or indirect, to cause the\n   direction or management of such entity, whether by contract or\n   otherwise, or (ii) ownership of fifty percent (50%) or more of the\n   outstanding shares, or (iii) beneficial ownership of such entity.\n\n   \"You\" (or \"Your\") shall mean an individual or Legal Entity\n   exercising permissions granted by this License.\n\n   \"Source\" form shall mean the preferred form for making modifications,\n   including but not limited to software source code, documentation\n   source, and configuration files.\n\n   \"Object\" form shall mean any form resulting from mechanical\n   transformation or translation of a Source form, including but\n   not limited to compiled object code, generated documentation,\n   and conversions to other media types.\n\n   \"Work\" shall mean the work of authorship, whether in Source or\n   Object form, made available under the License, as indicated by a\n   copyright notice that is included in or attached to the work\n   (an example is provided in the Appendix below).\n\n   \"Derivative Works\" shall mean any work, whether in Source or Object\n   form, that is based on (or derived from) the Work and for which the\n   editorial revisions, annotations, elaborations, or other modifications\n   represent, as a whole, an original work of authorship. For the purposes\n   of this License, Derivative Works shall not include works that remain\n   separable from, or merely link (or bind by name) to the interfaces of,\n   the Work and Derivative Works thereof.\n\n   \"Contribution\" shall mean any work of authorship, including\n   the original version of the Work and any modifications or additions\n   to that Work or Derivative Works thereof, that is intentionally\n   submitted to Licensor for inclusion in the Work by the copyright owner\n   or by an individual or Legal Entity authorized to submit on behalf of\n   the copyright owner. For the purposes of this definition, \"submitted\"\n   means any form of electronic, verbal, or written communication sent\n   to the Licensor or its representatives, including but not limited to\n   communication on electronic mailing lists, source code control systems,\n   and issue tracking systems that are managed by, or on behalf of, the\n   Licensor for the purpose of discussing and improving the Work, but\n   excluding communication that is conspicuously marked or otherwise\n   designated in writing by the copyright owner as \"Not a Contribution.\"\n\n   \"Contributor\" shall mean Licensor and any individual or Legal Entity\n   on behalf of whom a Contribution has been received by Licensor and\n   subsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\n   this License, each Contributor hereby grants to You a perpetual,\n   worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n   copyright license to reproduce, prepare Derivative Works of,\n   publicly display, publicly perform, sublicense, and distribute the\n   Work and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\n   this License, each Contributor hereby grants to You a perpetual,\n   worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n   (except as stated in this section) patent license to make, have made,\n   use, offer to sell, sell, import, and otherwise transfer the Work,\n   where such license applies only to those patent claims licensable\n   by such Contributor that are necessarily infringed by their\n   Contribution(s) alone or by combination of their Contribution(s)\n   with the Work to which such Contribution(s) was submitted. If You\n   institute patent litigation against any entity (including a\n   cross-claim or counterclaim in a lawsuit) alleging that the Work\n   or a Contribution incorporated within the Work constitutes direct\n   or contributory patent infringement, then any patent licenses\n   granted to You under this License for that Work shall terminate\n   as of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\n   Work or Derivative Works thereof in any medium, with or without\n   modifications, and in Source or Object form, provided that You\n   meet the following conditions:\n\n   (a) You must give any other recipients of the Work or\n       Derivative Works a copy of this License; and\n\n   (b) You must cause any modified files to carry prominent notices\n       stating that You changed the files; and\n\n   (c) You must retain, in the Source form of any Derivative Works\n       that You distribute, all copyright, patent, trademark, and\n       attribution notices from the Source form of the Work,\n       excluding those notices that do not pertain to any part of\n       the Derivative Works; and\n\n   (d) If the Work includes a \"NOTICE\" text file as part of its\n       distribution, then any Derivative Works that You distribute must\n       include a readable copy of the attribution notices contained\n       within such NOTICE file, excluding those notices that do not\n       pertain to any part of the Derivative Works, in at least one\n       of the following places: within a NOTICE text file distributed\n       as part of the Derivative Works; within the Source form or\n       documentation, if provided along with the Derivative Works; or,\n       within a display generated by the Derivative Works, if and\n       wherever such third-party notices normally appear. The contents\n       of the NOTICE file are for informational purposes only and\n       do not modify the License. You may add Your own attribution\n       notices within Derivative Works that You distribute, alongside\n       or as an addendum to the NOTICE text from the Work, provided\n       that such additional attribution notices cannot be construed\n       as modifying the License.\n\n   You may add Your own copyright statement to Your modifications and\n   may provide additional or different license terms and conditions\n   for use, reproduction, or distribution of Your modifications, or\n   for any such Derivative Works as a whole, provided Your use,\n   reproduction, and distribution of the Work otherwise complies with\n   the conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\n   any Contribution intentionally submitted for inclusion in the Work\n   by You to the Licensor shall be under the terms and conditions of\n   this License, without any additional terms or conditions.\n   Notwithstanding the above, nothing herein shall supersede or modify\n   the terms of any separate license agreement you may have executed\n   with Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\n   names, trademarks, service marks, or product names of the Licensor,\n   except as required for reasonable and customary use in describing the\n   origin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\n   agreed to in writing, Licensor provides the Work (and each\n   Contributor provides its Contributions) on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n   implied, including, without limitation, any warranties or conditions\n   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n   PARTICULAR PURPOSE. You are solely responsible for determining the\n   appropriateness of using or redistributing the Work and assume any\n   risks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\n   whether in tort (including negligence), contract, or otherwise,\n   unless required by applicable law (such as deliberate and grossly\n   negligent acts) or agreed to in writing, shall any Contributor be\n   liable to You for damages, including any direct, indirect, special,\n   incidental, or consequential damages of any character arising as a\n   result of this License or out of the use or inability to use the\n   Work (including but not limited to damages for loss of goodwill,\n   work stoppage, computer failure or malfunction, or any and all\n   other commercial damages or losses), even if such Contributor\n   has been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\n   the Work or Derivative Works thereof, You may choose to offer,\n   and charge a fee for, acceptance of support, warranty, indemnity,\n   or other liability obligations and/or rights consistent with this\n   License. However, in accepting such obligations, You may act only\n   on Your own behalf and on Your sole responsibility, not on behalf\n   of any other Contributor, and only if You agree to indemnify,\n   defend, and hold each Contributor harmless for any liability\n   incurred by, or claims asserted against, such Contributor by reason\n   of your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\n   To apply the Apache License to your work, attach the following\n   boilerplate notice, with the fields enclosed by brackets \"[]\"\n   replaced with your own identifying information. (Don't include\n   the brackets!)  The text should be enclosed in the appropriate\n   comment syntax for the file format. We also recommend that a\n   file or class name and description of purpose be included on the\n   same \"printed page\" as the copyright notice for easier\n   identification within third-party archives.\n\nCopyright 2026 Tomas Tauber\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n\thttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+      "packages": [
+        {
+          "name": "pest_stack_guard",
+          "version": "1.0.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "DTomas Tauber <me@tomtau.be>"
+          ],
+          "repository": "https://github.com/pest-parser/pest_stack_guard"
         }
       ]
     },
@@ -707,6 +751,46 @@
           "repository": "https://github.com/servo/rust-url/"
         },
         {
+          "name": "pest",
+          "version": "2.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Drago\u0219 Tiselice <dragostiselice@gmail.com>"
+          ],
+          "repository": "https://github.com/pest-parser/pest"
+        },
+        {
+          "name": "pest_derive",
+          "version": "2.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Drago\u0219 Tiselice <dragostiselice@gmail.com>"
+          ],
+          "repository": "https://github.com/pest-parser/pest"
+        },
+        {
+          "name": "pest_generator",
+          "version": "2.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Drago\u0219 Tiselice <dragostiselice@gmail.com>"
+          ],
+          "repository": "https://github.com/pest-parser/pest"
+        },
+        {
+          "name": "pest_meta",
+          "version": "2.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Drago\u0219 Tiselice <dragostiselice@gmail.com>"
+          ],
+          "repository": "https://github.com/pest-parser/pest"
+        },
+        {
           "name": "scopeguard",
           "version": "1.2.0",
           "source": "registry+https://github.com/rust-lang/crates.io-index",
@@ -735,6 +819,17 @@
             "Robert Grosse <n210241048576@gmail.com>"
           ],
           "repository": "https://github.com/storyyeller/stable_deref_trait"
+        },
+        {
+          "name": "stacker",
+          "version": "0.1.25",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "MIT OR Apache-2.0",
+          "authors": [
+            "Alex Crichton <alex@alexcrichton.com>",
+            "Simonas Kazlauskas <stacker@kazlauskas.me>"
+          ],
+          "repository": "https://github.com/rust-lang/stacker"
         },
         {
           "name": "string_cache",
@@ -973,32 +1068,10 @@
         },
         {
           "name": "windows-sys",
-          "version": "0.52.0",
+          "version": "0.61.2",
           "source": "registry+https://github.com/rust-lang/crates.io-index",
           "license_expression": "MIT OR Apache-2.0",
-          "authors": [
-            "Microsoft"
-          ],
-          "repository": "https://github.com/microsoft/windows-rs"
-        },
-        {
-          "name": "windows-targets",
-          "version": "0.52.6",
-          "source": "registry+https://github.com/rust-lang/crates.io-index",
-          "license_expression": "MIT OR Apache-2.0",
-          "authors": [
-            "Microsoft"
-          ],
-          "repository": "https://github.com/microsoft/windows-rs"
-        },
-        {
-          "name": "windows_x86_64_msvc",
-          "version": "0.52.6",
-          "source": "registry+https://github.com/rust-lang/crates.io-index",
-          "license_expression": "MIT OR Apache-2.0",
-          "authors": [
-            "Microsoft"
-          ],
+          "authors": [],
           "repository": "https://github.com/microsoft/windows-rs"
         }
       ]
@@ -1074,6 +1147,176 @@
             "Henri Sivonen <hsivonen@hsivonen.fi>"
           ],
           "repository": "https://github.com/hsivonen/utf8_iter"
+        }
+      ]
+    },
+    {
+      "id": "EPL-2.0",
+      "name": "Eclipse Public License 2.0",
+      "text_sha256": "9143818de37c1a8cbf2c658d91578158cf0905bd32a892cbe46c635414a3531c",
+      "text": "Eclipse Public License - v 2.0\n\nTHE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE\nPUBLIC LICENSE (\"AGREEMENT\"). ANY USE, REPRODUCTION OR DISTRIBUTION OF\nTHE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.\n\n1. DEFINITIONS\n\n\"Contribution\" means:\n\n  a) in the case of the initial Contributor, the initial content\n     Distributed under this Agreement, and\n  b) in the case of each subsequent Contributor:\n     i)  changes to the Program, and\n     ii) additions to the Program;\n\n     where such changes and/or additions to the Program originate from\n     and are Distributed by that particular Contributor. A Contribution\n     \"originates\" from a Contributor if it was added to the Program by\n     such Contributor itself or anyone acting on such Contributor's\n     behalf. Contributions do not include changes or additions to the\n     Program that are not Modified Works.\n\n\"Contributor\" means any person or entity that Distributes the Program.\n\n\"Licensed Patents\" mean patent claims licensable by a Contributor which\nare necessarily infringed by the use or sale of its Contribution alone\nor when combined with the Program.\n\n\"Program\" means the Contributions Distributed in accordance with this\nAgreement.\n\n\"Recipient\" means anyone who receives the Program under this Agreement\nor any Secondary License (as applicable), including Contributors.\n\n\"Derivative Works\" shall mean any work, whether in Source Code or other\nform, that is based on (or derived from) the Program and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship.\n\n\"Modified Works\" shall mean any work in Source Code or other form that\nresults from an addition to, deletion from, or modification of the\ncontents of the Program, including, for purposes of clarity any new file\nin Source Code form that contains any contents of the Program. Modified\nWorks shall not include works that contain only declarations,\ninterfaces, types, classes, structures, or files of the Program solely\nin each case in order to link to, bind by name, or subclass the Program\nor Modified Works thereof.\n\n\"Distribute\" means the acts of a) distributing or b) making available in\nany manner that enables the transfer of a copy.\n\n\"Source Code\" means the form of a Program preferred for making\nmodifications, including but not limited to software source code,\ndocumentation source, and configuration files.\n\n\"Secondary License\" means either the GNU General Public License, Version\n2.0, or any later versions of that license, including any exceptions or\nadditional permissions as identified by the initial Contributor.\n\n2. GRANT OF RIGHTS\n\n  a) Subject to the terms of this Agreement, each Contributor hereby\n     grants Recipient a non-exclusive, worldwide, royalty-free copyright\n     license to reproduce, prepare Derivative Works of, publicly display,\n     publicly perform, Distribute and sublicense the Contribution of such\n     Contributor, if any, and such Derivative Works.\n  b) Subject to the terms of this Agreement, each Contributor hereby\n     grants Recipient a non-exclusive, worldwide, royalty-free patent license\n     under Licensed Patents to make, use, sell, offer to sell, import and\n     otherwise transfer the Contribution of such Contributor, if any, in\n     Source Code or other form. This patent license shall apply to the\n     combination of the Contribution and the Program if, at the time the\n     Contribution is added by the Contributor, such addition of the\n     Contribution causes such combination to be covered by the\n     Licensed Patents. The patent license shall not apply to any other\n     combinations which include the Contribution. No hardware per se is\n     licensed hereunder.\n  c) Recipient understands that although each Contributor grants the\n     licenses to its Contributions set forth herein, no assurances are\n     provided by any Contributor that the Program does not infringe the\n     patent or other intellectual property rights of any other entity. Each\n     Contributor disclaims any liability to Recipient for claims brought by\n     any other entity based on infringement of intellectual property rights\n     or otherwise. As a condition to exercising the rights and licenses\n     granted hereunder, each Recipient hereby assumes sole responsibility to\n     secure any other intellectual property rights needed, if any. For\n     example, if a third party patent license is required to allow Recipient\n     to Distribute the Program, it is Recipient's responsibility to acquire\n     that license before distributing the Program.\n  d) Each Contributor represents that to its knowledge it has sufficient\n     copyright rights in its Contribution, if any, to grant the copyright\n     license set forth in this Agreement.\n  e) Notwithstanding the terms of any Secondary License, no Contributor\n     makes additional grants to any Recipient (other than those set forth in\n     this Agreement) as a result of such Recipient's receipt of the Program\n     under the terms of a Secondary License (if permitted under the terms of\n     Section 3).\n\n3. REQUIREMENTS\n\n3.1 If a Contributor Distributes the Program in any form, then:\n\n  a) the Program must also be made available as Source Code, in accordance\n     with section 3.2, and the Contributor must accompany the Program with a\n     statement that the Source Code for the Program is available under this\n     Agreement, and informs Recipients how to obtain it in a reasonable\n     manner on or through a medium customarily used for software exchange;\n     and\n  b) the Contributor may Distribute the Program under a license different\n     than this Agreement, provided that such license:\n     i)   effectively disclaims on behalf of all other Contributors all\n          warranties and conditions, express and implied, including warranties or\n          conditions of title and non-infringement, and implied warranties or\n          conditions of merchantability and fitness for a particular purpose;\n     ii)  effectively excludes on behalf of all other Contributors all\n          liability for damages, including direct, indirect, special, incidental\n          and consequential damages, such as lost profits;\n     iii) does not attempt to limit or alter the recipients' rights in the\n          Source Code under section 3.2; and\n     iv)  requires any subsequent distribution of the Program by any party to\n          be under a license that satisfies the requirements of this section 3.\n\n3.2 When the Program is Distributed as Source Code:\n\n  a) it must be made available under this Agreement, or if the Program (i)\n     is combined with other material in a separate file or files made\n     available under a Secondary License, and (ii) the initial Contributor\n     attached to the Source Code the notice described in Exhibit A of this\n     Agreement, then the Program may be made available under the terms of\n     such Secondary Licenses, and\n  b) a copy of this Agreement must be included with each copy of\n     the Program.\n\n3.3 Contributors may not remove or alter any copyright, patent,\ntrademark, attribution notices, disclaimers of warranty, or limitations\nof liability ('notices') contained within the Program from any copy of\nthe Program which they Distribute, provided that Contributors may add\ntheir own appropriate notices.\n\n4. COMMERCIAL DISTRIBUTION\n\nCommercial distributors of software may accept certain responsibilities\nwith respect to end users, business partners and the like. While this\nlicense is intended to facilitate the commercial use of the Program, the\nContributor who includes the Program in a commercial product offering\nshould do so in a manner which does not create potential liability for\nother Contributors. Therefore, if a Contributor includes the Program in\na commercial product offering, such Contributor (\"Commercial\nContributor\") hereby agrees to defend and indemnify every other\nContributor (\"Indemnified Contributor\") against any losses, damages and\ncosts (collectively \"Losses\") arising from claims, lawsuits and other\nlegal actions brought by a third party against the Indemnified\nContributor to the extent caused by the acts or omissions of such\nCommercial Contributor in connection with its distribution of the\nProgram in a commercial product offering. The obligations in this\nsection do not apply to any claims or Losses relating to any actual or\nalleged intellectual property infringement. In order to qualify, an\nIndemnified Contributor must: a) promptly notify the Commercial\nContributor in writing of such claim, and b) allow the Commercial\nContributor to control, and cooperate with the Commercial Contributor\nin, the defense and any related settlement negotiations. The Indemnified\nContributor may participate in any such claim at its own expense.\n\nFor example, a Contributor might include the Program in a commercial\nproduct offering, Product X. That Contributor is then a Commercial\nContributor. If that Commercial Contributor then makes performance\nclaims, or offers warranties related to Product X, those performance\nclaims and warranties are such Commercial Contributor's responsibility\nalone. Under this section, the Commercial Contributor would have to\ndefend claims against the other Contributors related to those\nperformance claims and warranties, and if a court requires any other\nContributor to pay any damages as a result, the Commercial Contributor\nmust pay those damages.\n\n5. NO WARRANTY\n\nEXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\nPERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN \"AS IS\"\nBASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR\nIMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF\nTITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR\nPURPOSE. Each Recipient is solely responsible for determining the\nappropriateness of using and distributing the Program and assumes all\nrisks associated with its exercise of rights under this Agreement,\nincluding but not limited to the risks and costs of program errors,\ncompliance with applicable laws, damage to or loss of data, programs or\nequipment, and unavailability or interruption of operations.\n\n6. DISCLAIMER OF LIABILITY\n\nEXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\nPERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS\nSHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST\nPROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE\nEXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGES.\n\n7. GENERAL\n\nIf any provision of this Agreement is invalid or unenforceable under\napplicable law, it shall not affect the validity or enforceability of\nthe remainder of the terms of this Agreement, and without further action\nby the parties hereto, such provision shall be reformed to the minimum\nextent necessary to make such provision valid and enforceable.\n\nIf Recipient institutes patent litigation against any entity (including\na cross-claim or counterclaim in a lawsuit) alleging that the Program\nitself (excluding combinations of the Program with other software or\nhardware) infringes such Recipient's patent(s), then such Recipient's\nrights granted under Section 2(b) shall terminate as of the date such\nlitigation is filed.\n\nAll Recipient's rights under this Agreement shall terminate if it fails\nto comply with any of the material terms or conditions of this Agreement\nand does not cure such failure in a reasonable period of time after\nbecoming aware of such noncompliance. If all Recipient's rights under\nthis Agreement terminate, Recipient agrees to cease use and distribution\nof the Program as soon as reasonably practicable. However, Recipient's\nobligations under this Agreement and any licenses granted by Recipient\nrelating to the Program shall continue and survive.\n\nEveryone is permitted to copy and distribute copies of this Agreement,\nbut in order to avoid inconsistency the Agreement is copyrighted and may\nonly be modified in the following manner. The Agreement Steward reserves\nthe right to publish new versions (including revisions) of this\nAgreement from time to time. No one other than the Agreement Steward has\nthe right to modify this Agreement. The Eclipse Foundation is the\ninitial Agreement Steward. The Eclipse Foundation may assign the\nresponsibility to serve as the Agreement Steward to a suitable separate\nentity. Each new version of the Agreement will be given a distinguishing\nversion number. The Program (including Contributions) may always be\nDistributed subject to the version of the Agreement under which it was\nreceived. In addition, after a new version of the Agreement is\npublished, Contributor may elect to Distribute the Program (including\nits Contributions) under the new version.\n\nExcept as expressly stated in Sections 2(a) and 2(b) above, Recipient\nreceives no rights or licenses to the intellectual property of any\nContributor under this Agreement, whether expressly, by implication,\nestoppel or otherwise. All rights in the Program not expressly granted\nunder this Agreement are reserved. Nothing in this Agreement is intended\nto be enforceable by any entity that is not a Contributor or Recipient.\nNo third-party beneficiary rights are created under this Agreement.\n\nExhibit A - Form of Secondary Licenses Notice\n\n\"This Source Code may also be made available under the following\nSecondary Licenses when the conditions for such availability set forth\nin the Eclipse Public License, v. 2.0 are satisfied: GNU General Public License v3.0 or later.\"\n\n  Simply including a copy of this Agreement, including this Exhibit A is\n  not sufficient to license the Source Code under Secondary Licenses.\n\n  If it is not possible or desirable to put the notice in a particular\n  file, then You may include the notice in a location (such as a LICENSE\n  file in a relevant directory) where a recipient would be likely to\n  look for such a notice.\n\n  You may add additional accurate notices of copyright ownership.\n\n\nApplicable Project Notices\n==========================\n\nNotices for Eclipse Layout Kernel\n\nThis content is produced and maintained by the Eclipse Layout Kernel project.\n\n  Project home: https://projects.eclipse.org/projects/modeling.elk\n\nTrademarks\n\nEclipse Layout Kernel is a trademark of the Eclipse Foundation.\n\nCopyright\n\nAll content is the property of the respective authors or their employers. For\nmore information regarding authorship of content, please consult the listed\nsource code repository logs.\n\nDeclared Project Licenses\n\nThis program and the accompanying materials are made available under the\nterms of the Eclipse Public License 2.0 which is available at\nhttp://www.eclipse.org/legal/epl-2.0.\n\nThis Source Code may also be made available under the following Secondary\nLicenses when the conditions for such availability set forth in the Eclipse\nPublic License v. 2.0 are satisfied: GPL-3.0 which is available at\nhttps://www.gnu.org/licenses/gpl-3.0-standalone.html.\n\nSPDX-License-Identifier: EPL-2.0 OR GPL-3.0-or-later\n\nSource Code\n\nThe project maintains the following source code repositories:\n\n  https://github.com/eclipse-elk/elk\n  https://github.com/eclipse-elk/elk-models\n\nThird-party Content\n\nThis project leverages the following third party content.\n\nDependencies automatically captured by the license-check-plugin: see DEPENDENCIES\n\nThe following third-party content and licences are either not automatically\ncaptured or are used in the elk-models repository\n(https://github.com/eclipse-elk/elk-models).\n\nlibavoid (0.3.1)\n\n  License: GNU Lesser General Public License, 2.1\n\nPtolemy demo models (n/a)\n\n  License: Ptolemy License (Custom)\n\nCryptography\n\nContent may contain encryption software. The country in which you are currently\nmay have restrictions on the import, possession, and use, and/or re-export to\nanother country, of encryption software. BEFORE using any encryption software,\nplease check the country's laws, regulations and policies concerning the import,\npossession, or use, and re-export of encryption software, to see if this is\npermitted.\n",
+      "packages": [
+        {
+          "name": "elk-layout",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-common",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-disco",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-force",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-graphviz-dot",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-graphviz-layouter",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-layered",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-libavoid",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-mrtree",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-radial",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-rectpacking",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-spore",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-topdownpacking",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-alg-vertiflex",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-conn-gmf",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-core",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-graph",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        },
+        {
+          "name": "org-eclipse-elk-graph-json",
+          "version": "0.12.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "EPL-2.0 OR GPL-3.0-or-later",
+          "authors": [],
+          "repository": "https://github.com/openedges/elk-rs"
+        }
+      ]
+    },
+    {
+      "id": "ISC",
+      "name": "ISC License",
+      "text_sha256": "61f16940693f0ff048d7090dbf514f50f7d867f912f3315d599e8c2f685dd0d2",
+      "text": "Copyright 2018 Callum Oakley\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH\nREGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,\nINDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM\nLOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR\nOTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR\nPERFORMANCE OF THIS SOFTWARE.\n",
+      "packages": [
+        {
+          "name": "json5",
+          "version": "0.4.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "license_expression": "ISC",
+          "authors": [
+            "Callum Oakley <hello@callumoakley.net>"
+          ],
+          "repository": "https://github.com/callum-oakley/json5-rs"
         }
       ]
     },

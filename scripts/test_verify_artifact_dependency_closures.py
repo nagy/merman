@@ -324,7 +324,7 @@ class VerificationCaseTests(unittest.TestCase):
                 self.assertEqual(check_case(current, closure)[0], [])
                 forbidden = []
                 if not profile_id.endswith("full"):
-                    forbidden.extend(["merman-layout-elk", "merman-elk-layered"])
+                    forbidden.extend(["merman-layout-elk", "elk-layout"])
                 if profile_id.endswith("standard"):
                     forbidden.extend(["ratex-layout", "ratex-parser", "ratex-svg", "ratex-types"])
                 if "-wasi-" in profile_id:
@@ -950,6 +950,30 @@ class CargoMetadataParserTests(unittest.TestCase):
         self.assertEqual(closure.features_by_package["dep"], {"one", "two"})
         self.assertIn(
             ("dep", "1.2.3", "registry+https://github.com/rust-lang/crates.io-index"),
+            closure.features_by_package_identity,
+        )
+
+    def test_tree_registers_a_host_build_identity_that_the_platform_filter_drops(
+        self,
+    ) -> None:
+        filtered = metadata_document("app", {"app": ()})
+        closure = parse_cargo_metadata(
+            filtered,
+            root_package="app",
+            tree_output="app v1.2.3\t\nhost-tool v1.2.3\t\n",
+            lock_identities={
+                ("host-tool", "1.2.3"): frozenset(
+                    {"registry+https://github.com/rust-lang/crates.io-index"}
+                )
+            },
+        )
+        self.assertEqual(closure.packages, {"app", "host-tool"})
+        self.assertIn(
+            (
+                "host-tool",
+                "1.2.3",
+                "registry+https://github.com/rust-lang/crates.io-index",
+            ),
             closure.features_by_package_identity,
         )
 
